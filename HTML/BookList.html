@@ -31,46 +31,6 @@
     />
     <link rel="stylesheet" href="styles.min.css" />
     <!-- bootstrap -->
-    <style>
-      .container1 input[type="text"] {
-        padding: 5px 0px;
-        margin: 5px 5px 5px 0px;
-      }
-
-      .add_book {
-        background-color: #1c97f3;
-        border: none;
-        color: white;
-        padding: 8px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border: 1px solid #186dad;
-      }
-
-      input {
-        border: 1px solid #1c97f3;
-        width: 260px;
-        height: 40px;
-        margin-bottom: 14px;
-      }
-
-      .delete {
-        background-color: #fd1200;
-        border: none;
-        color: white;
-        padding: 5px 15px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -78,34 +38,75 @@
         <div class="col-md-auto bg-primary">
           <h2 class="border rounded-circle text-center shadow-sm">Book List</h2>
           <div class="container shadow">
-              <form class="form" id="BookForm">
-             <div class="form-group">
-               <label for="BookTitle">Title</label>
-               <input type="text" name="BookTitle" id="BookTitle" class="form-control" placeholder="Book Title">
-             </div> 
-             <div class="form-group">
+            <form class="form" id="BookForm">
+              <div class="form-group">
+                <label for="BookTitle">Title</label>
+                <input
+                  type="text"
+                  name="BookTitle"
+                  id="BookTitle"
+                  class="form-control required"
+                  placeholder="Book Title"
+                />
+              </div>
+              <div class="form-group">
                 <label for="BookAuthor">Author</label>
-                <input type="text" name="BookAuthor" id="BookAuthor" class="form-control" placeholder="Book Author">
+                <input
+                  type="text"
+                  name="BookAuthor"
+                  id="BookAuthor"
+                  class="form-control"
+                  placeholder="Book Author"
+                />
               </div>
               <div class="form-group">
                 <label for="BookSeries">Series</label>
-                <input type="text" name="BookSeries" id="BookSeries" class="form-control" placeholder="Book Series">
+                <input
+                  type="text"
+                  name="BookSeries"
+                  id="BookSeries"
+                  class="form-control"
+                  placeholder="Book Series"
+                />
               </div>
               <div class="form-group">
                 <label for="BookSeriesNum">Series Number</label>
-                <input type="text" name="BookSeriesNum" id="BookSeriesNum" class="form-control" placeholder="01">
+                <input
+                  type="text"
+                  name="BookSeriesNum"
+                  id="BookSeriesNum"
+                  class="form-control"
+                  placeholder="01"
+                />
               </div>
               <div class="form-group">
                 <label for="BookDescription"></label>
-                <textarea class="form-control" name="BookDescription" id="BookDescription" rows="3"></textarea>
+                <textarea
+                  class="form-control"
+                  name="BookDescription"
+                  id="BookDescription"
+                  rows="3"
+                ></textarea>
               </div>
             </form>
-              <a href="#" class="btn btn-secondary" role="button" id="filldetails" onclick="addFields()">Fill Details</a> / 
-              <button onclick="exportTableToCSV('BookList.csv')" class="btn btn-secondary">Export Book List</button>
-              <hr>
+            <a
+              href="#"
+              class="btn btn-secondary"
+              role="button"
+              id="filldetails"
+              onclick="addFields()"
+              >Fill Details</a
+            >
+            /
+            <button
+              onclick="exportTableToCSV('BookList.csv')"
+              class="btn btn-secondary"
+            >
+              Export Book List
+            </button>
+            <hr />
             <table class="table table-dark" id="booklist">
               <tr>
-                
                 <th>Title</th>
                 <th>Author</th>
                 <th>Series</th>
@@ -115,9 +116,67 @@
             </table>
           </div>
         </div>
+
+        <!-- end Center Col -->
+        <div class="col col-lg-4 col-md-3 col-xl-6 bg-primary">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">How to use</h5>
+              <p class="card-text">
+                This app is designed to allow you enter the basic details for
+                books you want to track. Once you have added the details, click
+                on "Fill Details" and it will move the details you've added to
+                the table. As soon as you're happy with the list of what you've
+                added, you can click on "Export Book List" and it will download
+                what you've done as a Comma Seperated File (CSV) which you can
+                then import into a spreadsheet.
+              </p>
+            </div>
+          </div>
+          <hr class="bg-primary" />
+          <div class="card shadow-sm">
+            <h5 class="card-header">Thanks</h5>
+            <p class="card-text">
+              If you found this app to be useful, how about donating a few
+              dollars to say thank you?
+            </p>
+            <div class="card-text">
+              <form
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                target="_top"
+              >
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input
+                  type="hidden"
+                  name="hosted_button_id"
+                  value="C9QFERPZUK7D2"
+                />
+                <input
+                  type="image"
+                  src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                  border="0"
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Donate with PayPal button"
+                />
+                <img
+                  alt=""
+                  border="0"
+                  src="https://www.paypal.com/en_PA/i/scr/pixel.gif"
+                  width="1"
+                  height="1"
+                />
+              </form>
+            </div>
+          </div>
+          <div>&nbsp;</div>
+        </div>
       </div>
     </div>
-
     <div id="scripts">
       <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -157,57 +216,57 @@
         var cell5 = row.insertCell(4);
 
         // Add some text to the new cells:
-        cell1.innerHTML = document.getElementById('BookTitle').value;
-        cell2.innerHTML = document.getElementById('BookAuthor').value;
-        cell3.innerHTML = document.getElementById('BookSeries').value;
-        cell4.innerHTML = document.getElementById('BookSeriesNum').value;
-        cell5.innerHTML = document.getElementById('BookDescription').value;
+        cell1.innerHTML = document.getElementById("BookTitle").value;
+        cell2.innerHTML = document.getElementById("BookAuthor").value;
+        cell3.innerHTML = document.getElementById("BookSeries").value;
+        cell4.innerHTML = document.getElementById("BookSeriesNum").value;
+        cell5.innerHTML = document.getElementById("BookDescription").value;
 
         document.getElementById("BookForm").reset();
       }
     </script>
     <script type="text/javascript">
-    function downloadCSV(csv, filename) {
-    var csvFile;
-    var downloadLink;
+      function downloadCSV(csv, filename) {
+        var csvFile;
+        var downloadLink;
 
-    // CSV file
-    csvFile = new Blob([csv], {type: "text/csv"});
+        // CSV file
+        csvFile = new Blob([csv], { type: "text/csv" });
 
-    // Download link
-    downloadLink = document.createElement("a");
+        // Download link
+        downloadLink = document.createElement("a");
 
-    // File name
-    downloadLink.download = filename;
+        // File name
+        downloadLink.download = filename;
 
-    // Create a link to the file
-    downloadLink.href = window.URL.createObjectURL(csvFile);
+        // Create a link to the file
+        downloadLink.href = window.URL.createObjectURL(csvFile);
 
-    // Hide download link
-    downloadLink.style.display = "none";
+        // Hide download link
+        downloadLink.style.display = "none";
 
-    // Add the link to DOM
-    document.body.appendChild(downloadLink);
+        // Add the link to DOM
+        document.body.appendChild(downloadLink);
 
-    // Click download link
-    downloadLink.click();
-}
-function exportTableToCSV(filename) {
-    var csv = [];
-    var rows = document.querySelectorAll("table tr");
-    
-    for (var i = 0; i < rows.length; i++) {
-        var row = [], cols = rows[i].querySelectorAll("td, th");
-        
-        for (var j = 0; j < cols.length; j++) 
-            row.push(cols[j].innerText);
-        
-        csv.push(row.join(","));        
-    }
+        // Click download link
+        downloadLink.click();
+      }
+      function exportTableToCSV(filename) {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr");
 
-    // Download CSV file
-    downloadCSV(csv.join("\n"), filename);
-}
-</script>
+        for (var i = 0; i < rows.length; i++) {
+          var row = [],
+            cols = rows[i].querySelectorAll("td, th");
+
+          for (var j = 0; j < cols.length; j++) row.push(cols[j].innerText);
+
+          csv.push(row.join(","));
+        }
+
+        // Download CSV file
+        downloadCSV(csv.join("\n"), filename);
+      }
+    </script>
   </body>
 </html>
